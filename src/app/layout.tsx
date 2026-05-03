@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import AuthGate from "@/components/AuthGate";
 import "./globals.css";
 
 const inter = Inter({
@@ -24,7 +25,7 @@ const RootLayout = ({
       <body
         className={`${inter.className} ${inter.variable} min-h-screen bg-white text-zinc-900 antialiased`}
       >
-        {children}
+        <AuthGate>{children}</AuthGate>
       </body>
     </html>
   );
