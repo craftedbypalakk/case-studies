@@ -7,7 +7,7 @@ const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+  transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
 };
 
 const Navbar = () => (
@@ -83,15 +83,6 @@ const HeroSection = () => (
       />
     </div>
   </section>
-);
-
-const SectionDivider = () => (
-  <div className="flex justify-center" style={{ padding: "0 340px 0 340px" }}>
-    <hr
-      className="border-t border-[#E5E7EB] w-full"
-      style={{ maxWidth: "400px" }}
-    />
-  </div>
 );
 
 const ContentDivider = () => (
