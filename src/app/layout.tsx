@@ -9,24 +9,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Case study — Open Interest trading tool (Figma)",
-  description: "Case study frame exported from the Figma file; no extra graphics.",
+  title: "Design Case Studies",
+  description:
+    "A collection of product design case studies — deep dives into real product problems, process, and outcomes.",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
-    <html lang="en" className="bg-zinc-950 text-zinc-100">
+    <html lang="en" className="bg-white text-zinc-900">
       <body
-        className={`${inter.className} ${inter.variable} min-h-screen bg-zinc-950 text-zinc-100 antialiased`}
-        style={{ color: "#f4f4f5" }}
+        className={`${inter.className} ${inter.variable} min-h-screen bg-white text-zinc-900 antialiased`}
       >
         {children}
-        <noscript>Enable JavaScript to view the full case study, including live charts.</noscript>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

@@ -3,11 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: #000000;
-  --foreground: #fafafa;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --accent: #00d09c;
+  --accent-dark: #00b386;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --section-bg: #f9fafb;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
+  font-feature-settings: "cv11", "ss01";
+}
+
+::selection {
+  background-color: rgba(0, 208, 156, 0.15);
+  color: #1a1a1a;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
