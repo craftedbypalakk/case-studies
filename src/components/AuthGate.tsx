@@ -5,6 +5,11 @@ import { useState, useEffect, useCallback, type ReactNode } from "react";
 const STORAGE_KEY = "case-studies-auth";
 const CORRECT_PASSWORD = "palak-work-2026";
 
+/** Local only: set `NEXT_PUBLIC_SKIP_AUTH_GATE=true` in `.env.local` to bypass the gate. */
+const shouldSkipAuthGate =
+  process.env.NODE_ENV === "development" &&
+  process.env.NEXT_PUBLIC_SKIP_AUTH_GATE === "true";
+
 const AuthGate = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
@@ -47,7 +52,7 @@ const AuthGate = ({ children }: { children: ReactNode }) => {
     [handleSubmit]
   );
 
-  if (isAuthenticated) {
+  if (shouldSkipAuthGate || isAuthenticated) {
     return <>{children}</>;
   }
 

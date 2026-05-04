@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "rm -rf .next && next dev",
+    "preview": "next build && next start",
     "dev:turbopack": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "figma:pull": "node scripts/figma-pull-assets.mjs"
+    "figma:pull": "node scripts/figma-pull-assets.mjs",
+    "deploy": "vercel deploy --prod --yes && node -e \"console.log('\\nProduction: https://palakblooms.vercel.app\\n')\""
   },
   "dependencies": {
     "framer-motion": "^12.38.0",
