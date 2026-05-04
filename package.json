@@ -2,9 +2,12 @@
   "name": "case-studies",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.18.0"
+  },
   "scripts": {
-    "dev": "next dev",
-    "dev:clean": "rm -rf .next && next dev",
+    "dev": "bash scripts/dev.sh",
+    "dev:clean": "rm -rf .next && bash scripts/dev.sh",
     "preview": "next build && next start",
     "dev:turbopack": "next dev --turbopack",
     "build": "next build",
